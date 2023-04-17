@@ -267,6 +267,7 @@ func (c *container) start(ctx *Context, vm *VirtualMachine) {
 			sKey := strings.Split(val.Key, ".")
 			containerPort := sKey[len(sKey)-1]
 			ports[containerPort] = val.Value.(string)
+		}
 		if val.Key == "RUN.mountdmi" {
 			var mount bool
 			err := json.Unmarshal([]byte(val.Value.(string)), &mount)
